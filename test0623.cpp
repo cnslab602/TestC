@@ -1,9 +1,9 @@
-#include "std_lib_facilities.h "
+#include "std_lib_facilities.h"
 #include <limits.h>
 
 
 
-void repp(unsinged long long *);
+void repp(unsigned long long *);
 class makerr
 {
     public:
@@ -11,9 +11,9 @@ class makerr
     makerr();
 
     private:
-    unsigned long long * ull[ULLONG_MAX];
+    vector<unsigned long long*> ull;
 
-}
+};
 makerr::makerr()
     :ull{0}
     {
@@ -25,18 +25,16 @@ makerr::makerr()
 
 
 
-void repp(unsinged long long * mr)
+void repp()
 {
-    makerr t =new makerr;
-    makerr* p;
-    p=t;
+    makerr* t =new makerr;
 
 
 }
 
 int main()
 {
-    for (unsigned long long i = 0;i<ULLONG_MAX;i++ )
+    while (1)
     {
         cout << "No Problem" << endl;
         repp();
