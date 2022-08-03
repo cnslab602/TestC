@@ -7,6 +7,8 @@
 void error_handling(char* message);
 int main(int argc, char* argv[])
 {
+	while(1)
+	{
 	int serv_sock;
 	int clnt_sock;
 
@@ -38,6 +40,7 @@ int main(int argc, char* argv[])
 
 	close(clnt_sock);
 	close(serv_sock);
+	}
 
 	return 0;
 }
