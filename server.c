@@ -25,12 +25,13 @@ int main(int argc, char* argv[])
 
 	if (bind(serv_sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) == -1)
 		error_handling("bind error");
-	while(1)
-	{
+	
 	if (listen(serv_sock, 5) == -1)
 		error_handling("listen error");
 
 	clnt_addr_size = sizeof(clnt_addr);
+	while(1)
+	{
 	clnt_sock = accept(serv_sock, (struct sockaddr*) & clnt_addr, &clnt_addr_size);
 	if (clnt_sock == -1)
 		error_handling("accept error");
