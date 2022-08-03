@@ -7,8 +7,7 @@
 void error_handling(char* message);
 int main(int argc, char* argv[])
 {
-	while(1)
-	{
+	
 	int serv_sock;
 	int clnt_sock;
 
@@ -26,7 +25,8 @@ int main(int argc, char* argv[])
 
 	if (bind(serv_sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) == -1)
 		error_handling("bind error");
-
+	while(1)
+	{
 	if (listen(serv_sock, 5) == -1)
 		error_handling("listen error");
 
