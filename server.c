@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 
 	struct sockaddr_in serv_addr;
 	struct sockaddr_in clnt_addr;
-
+	socklen_t clnt_addr_size;
 	serv_sock = socket(PF_INET, SOCK_STREAM, 0);
 	if (serv_sock == -1)
 		error_handling("socket error");
@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 		error_handling("listen error");
 
 	clnt_addr_size = sizeof(clnt_addr);
-	clnt_sock = accept(serv_sock, (strcut scokaddr*) & clnt_addr, &clnt_addr_size);
+	clnt_sock = accept(serv_sock, (strcut sockaddr*) & clnt_addr, &clnt_addr_size);
 	if (clnt_sock == -1)
 		error_handling("accept error");
 
