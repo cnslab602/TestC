@@ -34,15 +34,18 @@ int main(int argc, char* argv[])
 	{
 	clnt_sock = accept(serv_sock, (struct sockaddr*) & clnt_addr, &clnt_addr_size);
 	if (clnt_sock == -1)
+	{
 		error_handling("accept error");
+		exit(0);
+	}
 
 	char msg[] = "This is CNSLAB, ma man";
 	write(clnt_sock, msg, sizeof(msg));
 
 	close(clnt_sock);
-	close(serv_sock);
+	
 	}
-
+	close(serv_sock);
 	return 0;
 }
 
