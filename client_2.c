@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	{
 		count++;
 		int clnt_sock;
-		struct sockaddr_int serv_addr;
+		struct sockaddr_in serv_addr;
 		char message[1024] = { 0x00, };
 
 		clnt_sock = socket(PF_INET, SOCK_STREAM, 0);
